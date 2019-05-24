@@ -1,6 +1,6 @@
 {
   "name": "Strapi Sample",
-  "description": "A Srapi app",
+  "description": "A Strapi app",
   "repository": "https://github.com/strapi/strapi-heroku-app",
   "logo": "https://raw.githubusercontent.com/strapi/strapi-heroku-app/master/public/avatar-strapi.jpg",
   "keywords": ["node", "strapi", "API"],
