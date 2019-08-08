@@ -5,7 +5,7 @@
       "connector": "strapi-hook-mongoose",
       "settings": {
         "client": "mongo",
-        "uri": "mongodb://irc_strapi:UNmKeXuZrP@w5T3@ds155218.mlab.com:55218/heroku_rhzffx7t",
+        "uri": "mongodb://irc-strapi:CUZS9vkSs48ttU_@ds155218.mlab.com:55218/heroku_rhzffx7t",
         "host": 'ds155218.mlab.com',
         "port": 55218,
         "database": 'heroku_rhzffx7t',
