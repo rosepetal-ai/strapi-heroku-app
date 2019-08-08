@@ -6,7 +6,7 @@
       "settings": {
         "client": "mongo",
         "uri": "",
-        "host": 'ds155218.mlab.com',
+        "host": "ds155218.mlab.com",
         "port": 55218,
         "database": 'heroku_rhzffx7t',
         "username": 'irc-strapi'",
