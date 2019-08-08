@@ -8,9 +8,9 @@
         "uri": "",
         "host": "ds155218.mlab.com",
         "port": 55218,
-        "database": 'heroku_rhzffx7t',
-        "username": 'irc-strapi'",
-        "password": 'CUZS9vkSs48ttU_'
+        "database": "heroku_rhzffx7t",
+        "username": "irc-strapi",
+        "password": "CUZS9vkSs48ttU_"
       },
       "options": {
         "ssl": "${process.env.DATABASE_SSL || false}",
