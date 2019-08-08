@@ -5,12 +5,12 @@
       "connector": "strapi-hook-mongoose",
       "settings": {
         "client": "mongo",
-        "uri": "${process.env.DATABASE_URI || ''}",
-        "host": "${process.env.DATABASE_HOST || 'ds155218.mlab.com'}",
-        "port": "${process.env.DATABASE_PORT || 55218}",
-        "database": "${process.env.DATABASE_NAME || 'heroku_rhzffx7t'}",
-        "username": "${process.env.DATABASE_USERNAME || 'irc_strapi'}",
-        "password": "${process.env.DATABASE_PASSWORD || 'UNmKeXuZrP@w5T3'}"
+        "uri": "mongodb://irc_strapi:UNmKeXuZrP@w5T3@ds155218.mlab.com:55218/heroku_rhzffx7t",
+        "host": 'ds155218.mlab.com',
+        "port": 55218,
+        "database": 'heroku_rhzffx7t',
+        "username": 'irc_strapi'",
+        "password": 'UNmKeXuZrP@w5T3'
       },
       "options": {
         "ssl": "${process.env.DATABASE_SSL || false}",
