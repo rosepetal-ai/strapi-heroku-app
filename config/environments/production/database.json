@@ -5,7 +5,6 @@
       "connector": "strapi-hook-mongoose",
       "settings": {
         "client": "mongo",
-        "uri": "",
         "host": "ds155218.mlab.com",
         "port": 55218,
         "database": "heroku_rhzffx7t",
@@ -13,8 +12,8 @@
         "password": "CUZS9vkSs48ttU_"
       },
       "options": {
-        "ssl": "${process.env.DATABASE_SSL || false}",
-        "authenticationDatabase": "${process.env.DATABASE_AUTHENTICATION_DATABASE || ''}"
+        "ssl": "false",
+        "authenticationDatabase": "heroku_rhzffx7t"
       }
     }
   }
