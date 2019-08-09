@@ -552,6 +552,9 @@
                 },
                 "image": {
                   "type": "string"
+                },
+                "author": {
+                  "type": "string"
                 }
               }
             }

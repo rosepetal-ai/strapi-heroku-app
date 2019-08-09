@@ -29,8 +29,9 @@
       "required": false
     },
     "author": {
-      "default": "",
-      "type": "string"
+      "model": "user",
+      "via": "article",
+      "plugin": "users-permissions"
     }
   }
 }

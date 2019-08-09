@@ -577,6 +577,10 @@
                 "type": "string"
               }
             }
+          },
+          "author": {
+            "type": "string",
+            "default": ""
           }
         }
       },
@@ -595,6 +599,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "author": {
+            "type": "string",
+            "default": ""
           }
         }
       }
