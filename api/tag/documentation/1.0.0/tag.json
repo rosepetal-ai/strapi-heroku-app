@@ -544,7 +544,7 @@
                 "content": {
                   "type": "string"
                 },
-                "cover": {
+                "image": {
                   "type": "string"
                 },
                 "tags": {
