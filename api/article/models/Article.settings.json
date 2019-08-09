@@ -21,6 +21,12 @@
       "collection": "tag",
       "via": "articles",
       "dominant": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
     }
   }
 }
