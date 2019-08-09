@@ -549,6 +549,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "image": {
+                  "type": "string"
                 }
               }
             }

@@ -27,6 +27,10 @@
       "via": "related",
       "plugin": "upload",
       "required": false
+    },
+    "author": {
+      "default": "",
+      "type": "string"
     }
   }
 }
