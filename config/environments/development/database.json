@@ -5,16 +5,15 @@
       "connector": "strapi-hook-mongoose",
       "settings": {
         "client": "mongo",
-        "host": "127.0.0.1",
-        "srv": false,
-        "port": 27017,
-        "database": "strapi-heroku-app",
-        "username": "",
-        "password": ""
+        "host": "ds155218.mlab.com",
+        "port": 55218,
+        "database": "heroku_rhzffx7t",
+        "username": "irc-strapi",
+        "password": "CUZS9vkSs48ttU_"
       },
       "options": {
-        "authenticationDatabase": "",
-        "ssl": false
+        "ssl": "false",
+        "authenticationDatabase": "heroku_rhzffx7t"
       }
     }
   }
