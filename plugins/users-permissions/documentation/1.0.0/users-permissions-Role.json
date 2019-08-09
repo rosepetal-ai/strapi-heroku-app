@@ -582,9 +582,6 @@
                 },
                 "role": {
                   "type": "string"
-                },
-                "article": {
-                  "type": "string"
                 }
               }
             }

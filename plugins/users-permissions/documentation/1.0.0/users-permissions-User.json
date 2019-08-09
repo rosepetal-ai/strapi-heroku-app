@@ -1121,34 +1121,6 @@
                 }
               }
             }
-          },
-          "article": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "content": {
-                "type": "string"
-              },
-              "tags": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "image": {
-                "type": "string"
-              },
-              "author": {
-                "type": "string"
-              }
-            }
           }
         }
       },
@@ -1185,9 +1157,6 @@
             "default": false
           },
           "role": {
-            "type": "string"
-          },
-          "article": {
             "type": "string"
           }
         }
