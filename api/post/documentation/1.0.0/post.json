@@ -568,6 +568,12 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "articles": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }

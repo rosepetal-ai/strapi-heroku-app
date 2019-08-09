@@ -17,6 +17,10 @@
       "collection": "post",
       "via": "tags",
       "dominant": true
+    },
+    "articles": {
+      "collection": "article",
+      "via": "tags"
     }
   }
 }

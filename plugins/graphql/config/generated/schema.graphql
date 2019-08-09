@@ -1,3 +1,85 @@
+type Article {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  title: String
+  content: String
+  cover: UploadFile
+  user: UsersPermissionsUser
+  tags(sort: String, limit: Int, start: Int, where: JSON): [Tag]
+}
+
+type ArticleAggregator {
+  count: Int
+}
+
+type ArticleConnection {
+  values: [Article]
+  groupBy: ArticleGroupBy
+  aggregate: ArticleAggregator
+}
+
+type ArticleConnection_id {
+  key: ID
+  connection: ArticleConnection
+}
+
+type ArticleConnectionContent {
+  key: String
+  connection: ArticleConnection
+}
+
+type ArticleConnectionCover {
+  key: ID
+  connection: ArticleConnection
+}
+
+type ArticleConnectionCreatedAt {
+  key: DateTime
+  connection: ArticleConnection
+}
+
+type ArticleConnectionTitle {
+  key: String
+  connection: ArticleConnection
+}
+
+type ArticleConnectionUpdatedAt {
+  key: DateTime
+  connection: ArticleConnection
+}
+
+type ArticleConnectionUser {
+  key: ID
+  connection: ArticleConnection
+}
+
+type ArticleGroupBy {
+  _id: [ArticleConnection_id]
+  createdAt: [ArticleConnectionCreatedAt]
+  updatedAt: [ArticleConnectionUpdatedAt]
+  title: [ArticleConnectionTitle]
+  content: [ArticleConnectionContent]
+  cover: [ArticleConnectionCover]
+  user: [ArticleConnectionUser]
+}
+
+input ArticleInput {
+  title: String
+  content: String
+  cover: ID
+  tags: [ID]
+  user: ID
+}
+
+input createArticleInput {
+  data: ArticleInput
+}
+
+type createArticlePayload {
+  article: Article
+}
+
 input createPostInput {
   data: PostInput
 }
@@ -34,6 +116,14 @@ type createUserPayload {
 The `DateTime` scalar represents a date and time following the ISO 8601 standard
 """
 scalar DateTime
+
+input deleteArticleInput {
+  where: InputID
+}
+
+type deleteArticlePayload {
+  article: Article
+}
 
 input deletePostInput {
   where: InputID
@@ -89,9 +179,12 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Post | createPostPayload | updatePostPayload | deletePostPayload | PostConnection | PostAggregator | PostGroupBy | PostConnection_id | PostConnectionCreatedAt | PostConnectionUpdatedAt | PostConnectionTitle | PostConnectionContent | PostConnectionCover | Tag | createTagPayload | updateTagPayload | deleteTagPayload | TagConnection | TagAggregator | TagGroupBy | TagConnection_id | TagConnectionCreatedAt | TagConnectionUpdatedAt | TagConnectionName | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Article | createArticlePayload | updateArticlePayload | deleteArticlePayload | ArticleConnection | ArticleAggregator | ArticleGroupBy | ArticleConnection_id | ArticleConnectionCreatedAt | ArticleConnectionUpdatedAt | ArticleConnectionTitle | ArticleConnectionContent | ArticleConnectionCover | ArticleConnectionUser | Post | createPostPayload | updatePostPayload | deletePostPayload | PostConnection | PostAggregator | PostGroupBy | PostConnection_id | PostConnectionCreatedAt | PostConnectionUpdatedAt | PostConnectionTitle | PostConnectionContent | PostConnectionCover | Tag | createTagPayload | updateTagPayload | deleteTagPayload | TagConnection | TagAggregator | TagGroupBy | TagConnection_id | TagConnectionCreatedAt | TagConnectionUpdatedAt | TagConnectionName | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
 
 type Mutation {
+  createArticle(input: createArticleInput): createArticlePayload
+  updateArticle(input: updateArticleInput): updateArticlePayload
+  deleteArticle(input: deleteArticleInput): deleteArticlePayload
   createPost(input: createPostInput): createPostPayload
   updatePost(input: updatePostInput): updatePostPayload
   deletePost(input: deletePostInput): deletePostPayload
@@ -180,6 +273,9 @@ input PostInput {
 }
 
 type Query {
+  article(id: ID!): Article
+  articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
+  articlesConnection(sort: String, limit: Int, start: Int, where: JSON): ArticleConnection
   post(id: ID!): Post
   posts(sort: String, limit: Int, start: Int, where: JSON): [Post]
   postsConnection(sort: String, limit: Int, start: Int, where: JSON): PostConnection
@@ -215,6 +311,7 @@ type Tag {
   updatedAt: DateTime!
   name: String
   posts(sort: String, limit: Int, start: Int, where: JSON): [Post]
+  articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
 }
 
 type TagAggregator {
@@ -257,6 +354,16 @@ type TagGroupBy {
 input TagInput {
   name: String
   posts: [ID]
+  articles: [ID]
+}
+
+input updateArticleInput {
+  where: InputID
+  data: ArticleInput
+}
+
+type updateArticlePayload {
+  article: Article
 }
 
 input updatePostInput {
@@ -406,6 +513,7 @@ input UserInput {
   confirmed: Boolean
   blocked: Boolean
   role: ID
+  articles: [ID]
 }
 
 type UsersPermissionsMe {
@@ -488,6 +596,7 @@ type UsersPermissionsUser {
   confirmed: Boolean
   blocked: Boolean
   role: UsersPermissionsRole
+  articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
 }
 
 type UsersPermissionsUserAggregator {

@@ -1,6 +1,6 @@
 {
-  "host": "localhost",
-  "port": 1337,
+  "host": "testo.disertum.com",
+  "port": 5002,
   "proxy": {
     "enabled": false
   },

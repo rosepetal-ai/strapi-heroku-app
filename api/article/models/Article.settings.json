@@ -1,0 +1,38 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "article",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "default": "",
+      "type": "string"
+    },
+    "content": {
+      "default": "",
+      "type": "text"
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "tags": {
+      "collection": "tag",
+      "via": "articles",
+      "dominant": true
+    },
+    "user": {
+      "model": "user",
+      "via": "articles",
+      "dominant": true,
+      "plugin": "users-permissions"
+    }
+  }
+}
