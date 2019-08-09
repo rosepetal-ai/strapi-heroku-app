@@ -17,22 +17,16 @@
       "default": "",
       "type": "text"
     },
-    "image": {
-      "collection": "file",
-      "via": "related",
-      "plugin": "upload",
-      "required": false
-    },
     "tags": {
       "collection": "tag",
       "via": "articles",
       "dominant": true
     },
-    "user": {
-      "model": "user",
-      "via": "articles",
-      "dominant": true,
-      "plugin": "users-permissions"
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
     }
   }
 }

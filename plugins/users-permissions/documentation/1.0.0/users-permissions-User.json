@@ -1139,7 +1139,10 @@
                   "type": "string"
                 },
                 "image": {
-                  "type": "string"
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "tags": {
                   "type": "array",
