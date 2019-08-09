@@ -577,48 +577,6 @@
                 "type": "string"
               }
             }
-          },
-          "author": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "articles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
           }
         }
       },
@@ -637,9 +595,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "author": {
-            "type": "string"
           }
         }
       }

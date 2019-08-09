@@ -27,6 +27,11 @@
       "via": "related",
       "plugin": "upload",
       "required": false
+    },
+    "author": {
+      "model": "user",
+      "via": "articles",
+      "plugin": "users-permissions"
     }
   }
 }
