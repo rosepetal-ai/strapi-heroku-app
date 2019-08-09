@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "article",
   "info": {
     "name": "article",
     "description": ""
@@ -27,12 +27,6 @@
       "collection": "tag",
       "via": "articles",
       "dominant": true
-    },
-    "user": {
-      "model": "user",
-      "via": "articles",
-      "dominant": true,
-      "plugin": "users-permissions"
     }
   }
 }
