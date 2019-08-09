@@ -544,19 +544,13 @@
                 "content": {
                   "type": "string"
                 },
-                "image": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
                 "tags": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
                 },
-                "user": {
+                "image": {
                   "type": "string"
                 }
               }
