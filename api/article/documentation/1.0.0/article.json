@@ -579,8 +579,43 @@
             }
           },
           "author": {
-            "type": "string",
-            "default": ""
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "article": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -601,8 +636,7 @@
             }
           },
           "author": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           }
         }
       }

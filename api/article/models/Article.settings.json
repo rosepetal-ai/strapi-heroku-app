@@ -27,11 +27,6 @@
       "via": "related",
       "plugin": "upload",
       "required": false
-    },
-    "author": {
-      "model": "user",
-      "via": "article",
-      "plugin": "users-permissions"
     }
   }
 }

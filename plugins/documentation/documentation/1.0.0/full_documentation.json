@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "08/09/2019 5:56:36 PM"
+    "x-generation-date": "08/09/2019 6:02:31 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3606,8 +3606,43 @@
             }
           },
           "author": {
-            "type": "string",
-            "default": ""
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "article": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -3628,8 +3663,7 @@
             }
           },
           "author": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           }
         }
       },
@@ -3965,6 +3999,9 @@
                 },
                 "role": {
                   "type": "string"
+                },
+                "article": {
+                  "type": "string"
                 }
               }
             }
@@ -4060,6 +4097,34 @@
                 }
               }
             }
+          },
+          "article": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "image": {
+                "type": "string"
+              },
+              "author": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -4096,6 +4161,9 @@
             "default": false
           },
           "role": {
+            "type": "string"
+          },
+          "article": {
             "type": "string"
           }
         }
