@@ -17,7 +17,7 @@
       "default": "",
       "type": "text"
     },
-    "cover": {
+    "image": {
       "model": "file",
       "via": "related",
       "plugin": "upload",
@@ -27,6 +27,12 @@
       "collection": "tag",
       "via": "articles",
       "dominant": true
+    },
+    "user": {
+      "model": "user",
+      "via": "articles",
+      "dominant": true,
+      "plugin": "users-permissions"
     }
   }
 }
