@@ -2,25 +2,16 @@
   "connection": "default",
   "collectionName": "",
   "info": {
-    "name": "tag",
+    "name": "page",
     "description": ""
   },
   "options": {
     "timestamps": true
   },
   "attributes": {
-    "name": {
+    "title": {
       "default": "",
       "type": "string"
-    },
-    "posts": {
-      "collection": "post",
-      "via": "tags",
-      "dominant": true
-    },
-    "articles": {
-      "collection": "article",
-      "via": "tags"
     }
   }
 }
